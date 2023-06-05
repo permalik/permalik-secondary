@@ -1,19 +1,19 @@
+import { B2Config } from '../config';
 import { b2Instance } from './b2Instance.service';
+import { B2Props } from '@/types';
 
-export const b2GetUploadUrl = async (bucketID: string) => {
-  const b2 = await b2Instance(
-    process.env.APPLICATION_KEY_ID as string,
-    process.env.APPLICATION_KEY as string
-  );
+export const b2GetUploadUrl = async (params: B2Props) => {
+  const b2 = await b2Instance(B2Config);
 
   const response = await b2.getUploadUrl({
-    bucketId: bucketID
+    bucketId: params.bucketID
   });
+  console.log(params.bucketID);
 
   const result = response.data;
 
   console.log(result);
-  return result;
+  return params;
 };
 
-b2GetUploadUrl(process.env.BUCKET_ID as string);
+b2GetUploadUrl(B2Config);
