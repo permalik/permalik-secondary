@@ -8,12 +8,8 @@ export const b2GetUploadUrl = async (params: B2Props) => {
   const response = await b2.getUploadUrl({
     bucketId: params.bucketID
   });
-  console.log(params.bucketID);
 
   const result = response.data;
 
-  console.log(result);
-  return params;
+  return result;
 };
-
-b2GetUploadUrl(B2Config);

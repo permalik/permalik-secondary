@@ -12,6 +12,5 @@ export const b2Instance = async ({
 
   await b2.authorize();
 
-  console.log(b2);
   return b2;
 };
