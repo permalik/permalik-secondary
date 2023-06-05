@@ -1,10 +1,13 @@
 import 'dotenv/config';
 import B2 from 'backblaze-b2';
 
-export const b2Instance = async () => {
+export const b2Instance = async (
+  applicationKeyID: string,
+  applicationKey: string
+) => {
   const b2 = new B2({
-    applicationKeyId: process.env.APPLICATION_KEY_ID as string,
-    applicationKey: process.env.APPLICATION_KEY as string
+    applicationKeyId: applicationKeyID,
+    applicationKey: applicationKey
   });
 
   await b2.authorize();
@@ -12,5 +15,3 @@ export const b2Instance = async () => {
   console.log(b2);
   return b2;
 };
-
-b2Instance();
