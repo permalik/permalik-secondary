@@ -1,5 +1,5 @@
+import { b2Instance } from '.';
 import { B2Config } from '../config';
-import { b2Instance } from './b2Instance.service';
 import { B2Props } from '@/types';
 
 export const b2GetUploadUrl = async (params: B2Props) => {

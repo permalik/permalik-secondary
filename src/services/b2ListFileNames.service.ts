@@ -14,6 +14,6 @@ export const b2ListFileNames = async (bucketID: string) => {
 
   const result = response.data.files;
 
-  console.log(response.data.files);
-  return response;
+  console.log(result);
+  return result;
 };
