@@ -7,9 +7,10 @@ export const b2UploadFile = async (fileData: any) => {
   const { uploadUrl, authorizationToken } = await b2GetUploadUrl(B2Config);
 
   // TODO: Read file from form input
-  const file = fileData;
+  // const file = fileData;
+  const file = fs.readFileSync('./1.md');
 
-  const fileName = '';
+  const fileName = '1.md';
   const source = Buffer.from(file);
 
   const response = await b2.uploadFile({
